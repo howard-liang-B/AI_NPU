@@ -65,7 +65,7 @@ cd build && cmake .. && make -j4
 python3 $TVM_HOME/vta/tests/python/integration/test_benchmark_topi_conv2d.py
 ```
 
-## 可能的錯誤與解決方案
+## 🚀 可能的錯誤與解決方案
 
 ### 1. `Cannot find Verilator`
 如果出現 `Cannot find Verilator`，請確認 Verilator 已正確安裝：
