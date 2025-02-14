@@ -1,0 +1,23 @@
+==========================================================
+Resnet18_e25_b5_t70_v30(global Conv2d sp=0.3).pth
+epoch = 25
+batch = 5
+train size = 70
+valid size =30
+==========================================================
+1. pytorch_train
+2(a). pytorch_prune.ipynb : 使用官方的 prune，做 global unstructure
+2(b). DepGraph_prune : 使用 Torch-Pruning 做 structure pruning
+3. export_to_onnx
+==========================================================
+## 修改 yolov8_pruning
+0. 事前準備
+   * 把 ultralytics/yolo/cfg/default.yaml 下載下來修改 task、model、data、workspace: 0、刪除copy_paste_mode
+   * 準備自己資料集的 tooth_data.yaml
+1. 把 yolo. 刪除
+2. https://github.com/VainF/Torch-Pruning/issues/147
+   把 TASK_MAP 那行修改成 self.trainer = TASK_MAP[self.task][1](overrides=overrides, _callbacks=self.callbacks) 
+3. 修改 C:\Users\user\anaconda3\envs\YOLOv8_env\Lib\site-packages\ultralytics\utils\loss.py 
+4. 加上 50-95 在 mAP後面
+5. !python yolov8_pruning.py --model my_weights/yolov8_tooth_seg.pt --cfg tooth_dataset/default.yaml --iterative-steps 1 --target-prune-rate 0.1
+

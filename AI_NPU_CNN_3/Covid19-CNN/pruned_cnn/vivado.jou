@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct 21 14:07:19 2024
+# Process ID: 138242
+# Current directory: /mnt/Data/digital_design/AI_NPU_CNN_3/Covid19-CNN/pruned_cnn
+# Command line: vivado -mode batch -source vivado_synth.tcl
+# Log file: /mnt/Data/digital_design/AI_NPU_CNN_3/Covid19-CNN/pruned_cnn/vivado.log
+# Journal file: /mnt/Data/digital_design/AI_NPU_CNN_3/Covid19-CNN/pruned_cnn/vivado.jou
+#-----------------------------------------------------------
+source vivado_synth.tcl

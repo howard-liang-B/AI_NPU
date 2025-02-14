@@ -1,0 +1,249 @@
+
+
+================================================================
+== Vitis HLS Report for 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s'
+================================================================
+* Date:           Mon Oct 21 14:06:39 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        myproject_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.234 ns|     0.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|     512|    256|    -|
+|Multiplexer      |        -|    -|       -|    207|    -|
+|Register         |        -|    -|       1|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     513|    463|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +---------------------------+----------------------------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |           Memory          |                                      Module                                      | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------------------+----------------------------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |line_buffer_Array_7_0_0_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_1_0_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_0_1_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_1_1_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_0_2_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_1_2_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_0_3_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    |line_buffer_Array_7_1_3_U  |shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s_line_buffer_Array_7_lbW  |        0|  64|  32|    0|    31|   16|     1|          496|
+    +---------------------------+----------------------------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total                      |                                                                                  |        0| 512| 256|    0|   248|  128|     8|         3968|
+    +---------------------------+----------------------------------------------------------------------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |kernel_data_V_7_10_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_11_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_17_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_18_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_19_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_20_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_21_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_22_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_23_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_28_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_29_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_30_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_31_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_32_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_33_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_34_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_35_o  |   9|          2|   16|         32|
+    |kernel_data_V_7_4_o   |   9|          2|   16|         32|
+    |kernel_data_V_7_5_o   |   9|          2|   16|         32|
+    |kernel_data_V_7_6_o   |   9|          2|   16|         32|
+    |kernel_data_V_7_7_o   |   9|          2|   16|         32|
+    |kernel_data_V_7_8_o   |   9|          2|   16|         32|
+    |kernel_data_V_7_9_o   |   9|          2|   16|         32|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 | 207|         46|  368|        736|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------+---+----+-----+-----------+
+    |    Name   | FF| LUT| Bits| Const Bits|
+    +-----------+---+----+-----+-----------+
+    |ap_CS_fsm  |  1|   0|    1|          0|
+    +-----------+---+----+-----+-----------+
+    |Total      |  1|   0|    1|          0|
+    +-----------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+|          RTL Ports          | Dir | Bits|  Protocol  |                          Source Object                          |    C Type    |
++-----------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+|ap_clk                       |   in|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|ap_rst                       |   in|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|ap_start                     |   in|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|ap_done                      |  out|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|ap_idle                      |  out|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|ap_ready                     |  out|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|ap_ce                        |   in|    1|  ap_ctrl_hs|  shift_line_buffer<array<ap_fixed<16, 6, 5, 3, 0>, 4u>, config7>|  return value|
+|p_read                       |   in|   16|     ap_none|                                                           p_read|        scalar|
+|p_read1                      |   in|   16|     ap_none|                                                          p_read1|        scalar|
+|p_read2                      |   in|   16|     ap_none|                                                          p_read2|        scalar|
+|p_read3                      |   in|   16|     ap_none|                                                          p_read3|        scalar|
+|kernel_data_V_7_4_i          |   in|   16|     ap_ovld|                                                kernel_data_V_7_4|       pointer|
+|kernel_data_V_7_4_o          |  out|   16|     ap_ovld|                                                kernel_data_V_7_4|       pointer|
+|kernel_data_V_7_4_o_ap_vld   |  out|    1|     ap_ovld|                                                kernel_data_V_7_4|       pointer|
+|kernel_data_V_7_0            |  out|   16|      ap_vld|                                                kernel_data_V_7_0|       pointer|
+|kernel_data_V_7_0_ap_vld     |  out|    1|      ap_vld|                                                kernel_data_V_7_0|       pointer|
+|kernel_data_V_7_5_i          |   in|   16|     ap_ovld|                                                kernel_data_V_7_5|       pointer|
+|kernel_data_V_7_5_o          |  out|   16|     ap_ovld|                                                kernel_data_V_7_5|       pointer|
+|kernel_data_V_7_5_o_ap_vld   |  out|    1|     ap_ovld|                                                kernel_data_V_7_5|       pointer|
+|kernel_data_V_7_1            |  out|   16|      ap_vld|                                                kernel_data_V_7_1|       pointer|
+|kernel_data_V_7_1_ap_vld     |  out|    1|      ap_vld|                                                kernel_data_V_7_1|       pointer|
+|kernel_data_V_7_6_i          |   in|   16|     ap_ovld|                                                kernel_data_V_7_6|       pointer|
+|kernel_data_V_7_6_o          |  out|   16|     ap_ovld|                                                kernel_data_V_7_6|       pointer|
+|kernel_data_V_7_6_o_ap_vld   |  out|    1|     ap_ovld|                                                kernel_data_V_7_6|       pointer|
+|kernel_data_V_7_2            |  out|   16|      ap_vld|                                                kernel_data_V_7_2|       pointer|
+|kernel_data_V_7_2_ap_vld     |  out|    1|      ap_vld|                                                kernel_data_V_7_2|       pointer|
+|kernel_data_V_7_7_i          |   in|   16|     ap_ovld|                                                kernel_data_V_7_7|       pointer|
+|kernel_data_V_7_7_o          |  out|   16|     ap_ovld|                                                kernel_data_V_7_7|       pointer|
+|kernel_data_V_7_7_o_ap_vld   |  out|    1|     ap_ovld|                                                kernel_data_V_7_7|       pointer|
+|kernel_data_V_7_3            |  out|   16|      ap_vld|                                                kernel_data_V_7_3|       pointer|
+|kernel_data_V_7_3_ap_vld     |  out|    1|      ap_vld|                                                kernel_data_V_7_3|       pointer|
+|kernel_data_V_7_17_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_17|       pointer|
+|kernel_data_V_7_17_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_17|       pointer|
+|kernel_data_V_7_17_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_17|       pointer|
+|kernel_data_V_7_13           |  out|   16|      ap_vld|                                               kernel_data_V_7_13|       pointer|
+|kernel_data_V_7_13_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_13|       pointer|
+|kernel_data_V_7_18_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_18|       pointer|
+|kernel_data_V_7_18_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_18|       pointer|
+|kernel_data_V_7_18_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_18|       pointer|
+|kernel_data_V_7_14           |  out|   16|      ap_vld|                                               kernel_data_V_7_14|       pointer|
+|kernel_data_V_7_14_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_14|       pointer|
+|kernel_data_V_7_19_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_19|       pointer|
+|kernel_data_V_7_19_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_19|       pointer|
+|kernel_data_V_7_19_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_19|       pointer|
+|kernel_data_V_7_15           |  out|   16|      ap_vld|                                               kernel_data_V_7_15|       pointer|
+|kernel_data_V_7_15_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_15|       pointer|
+|kernel_data_V_7_28_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_28|       pointer|
+|kernel_data_V_7_28_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_28|       pointer|
+|kernel_data_V_7_28_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_28|       pointer|
+|kernel_data_V_7_24           |  out|   16|      ap_vld|                                               kernel_data_V_7_24|       pointer|
+|kernel_data_V_7_24_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_24|       pointer|
+|kernel_data_V_7_29_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_29|       pointer|
+|kernel_data_V_7_29_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_29|       pointer|
+|kernel_data_V_7_29_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_29|       pointer|
+|kernel_data_V_7_25           |  out|   16|      ap_vld|                                               kernel_data_V_7_25|       pointer|
+|kernel_data_V_7_25_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_25|       pointer|
+|kernel_data_V_7_30_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_30|       pointer|
+|kernel_data_V_7_30_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_30|       pointer|
+|kernel_data_V_7_30_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_30|       pointer|
+|kernel_data_V_7_26           |  out|   16|      ap_vld|                                               kernel_data_V_7_26|       pointer|
+|kernel_data_V_7_26_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_26|       pointer|
+|kernel_data_V_7_31_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_31|       pointer|
+|kernel_data_V_7_31_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_31|       pointer|
+|kernel_data_V_7_31_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_31|       pointer|
+|kernel_data_V_7_27           |  out|   16|      ap_vld|                                               kernel_data_V_7_27|       pointer|
+|kernel_data_V_7_27_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_27|       pointer|
+|kernel_data_V_7_8_i          |   in|   16|     ap_ovld|                                                kernel_data_V_7_8|       pointer|
+|kernel_data_V_7_8_o          |  out|   16|     ap_ovld|                                                kernel_data_V_7_8|       pointer|
+|kernel_data_V_7_8_o_ap_vld   |  out|    1|     ap_ovld|                                                kernel_data_V_7_8|       pointer|
+|kernel_data_V_7_9_i          |   in|   16|     ap_ovld|                                                kernel_data_V_7_9|       pointer|
+|kernel_data_V_7_9_o          |  out|   16|     ap_ovld|                                                kernel_data_V_7_9|       pointer|
+|kernel_data_V_7_9_o_ap_vld   |  out|    1|     ap_ovld|                                                kernel_data_V_7_9|       pointer|
+|kernel_data_V_7_10_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_10|       pointer|
+|kernel_data_V_7_10_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_10|       pointer|
+|kernel_data_V_7_10_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_10|       pointer|
+|kernel_data_V_7_11_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_11|       pointer|
+|kernel_data_V_7_11_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_11|       pointer|
+|kernel_data_V_7_11_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_11|       pointer|
+|kernel_data_V_7_20_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_20|       pointer|
+|kernel_data_V_7_20_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_20|       pointer|
+|kernel_data_V_7_20_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_20|       pointer|
+|kernel_data_V_7_16           |  out|   16|      ap_vld|                                               kernel_data_V_7_16|       pointer|
+|kernel_data_V_7_16_ap_vld    |  out|    1|      ap_vld|                                               kernel_data_V_7_16|       pointer|
+|kernel_data_V_7_21_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_21|       pointer|
+|kernel_data_V_7_21_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_21|       pointer|
+|kernel_data_V_7_21_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_21|       pointer|
+|kernel_data_V_7_22_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_22|       pointer|
+|kernel_data_V_7_22_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_22|       pointer|
+|kernel_data_V_7_22_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_22|       pointer|
+|kernel_data_V_7_23_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_23|       pointer|
+|kernel_data_V_7_23_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_23|       pointer|
+|kernel_data_V_7_23_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_23|       pointer|
+|kernel_data_V_7_32_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_32|       pointer|
+|kernel_data_V_7_32_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_32|       pointer|
+|kernel_data_V_7_32_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_32|       pointer|
+|kernel_data_V_7_33_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_33|       pointer|
+|kernel_data_V_7_33_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_33|       pointer|
+|kernel_data_V_7_33_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_33|       pointer|
+|kernel_data_V_7_34_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_34|       pointer|
+|kernel_data_V_7_34_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_34|       pointer|
+|kernel_data_V_7_34_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_34|       pointer|
+|kernel_data_V_7_35_i         |   in|   16|     ap_ovld|                                               kernel_data_V_7_35|       pointer|
+|kernel_data_V_7_35_o         |  out|   16|     ap_ovld|                                               kernel_data_V_7_35|       pointer|
+|kernel_data_V_7_35_o_ap_vld  |  out|    1|     ap_ovld|                                               kernel_data_V_7_35|       pointer|
++-----------------------------+-----+-----+------------+-----------------------------------------------------------------+--------------+
+

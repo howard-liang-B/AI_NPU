@@ -1,0 +1,188 @@
+
+
+================================================================
+== Vitis HLS Report for 'shift_line_buffer_array_ap_fixed_16_6_5_3_0_4u_config7_s'
+================================================================
+* Date:           Mon Oct 21 14:06:16 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        myproject_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.234 ns|     0.62 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.23>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_3"   --->   Operation 2 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%p_read_1 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read3" [firmware/nnet_utils/nnet_conv_stream.h:237]   --->   Operation 3 'read' 'p_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_read_2 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read2" [firmware/nnet_utils/nnet_conv_stream.h:237]   --->   Operation 4 'read' 'p_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read_3 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read1" [firmware/nnet_utils/nnet_conv_stream.h:237]   --->   Operation 5 'read' 'p_read_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read_4 = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read" [firmware/nnet_utils/nnet_conv_stream.h:237]   --->   Operation 6 'read' 'p_read_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.61ns)   --->   "%shift_buffer_V_1_0 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %p_read_4, i1 1"   --->   Operation 7 'memshiftread' 'shift_buffer_V_1_0' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 8 [1/1] (1.61ns)   --->   "%shift_buffer_V_0_0 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %shift_buffer_V_1_0, i1 1"   --->   Operation 8 'memshiftread' 'shift_buffer_V_0_0' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 9 [1/1] (1.61ns)   --->   "%shift_buffer_V_1_1 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 0, i1 0"   --->   Operation 9 'memshiftread' 'shift_buffer_V_1_1' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 10 [1/1] (1.61ns)   --->   "%empty = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %p_read_3, i1 1"   --->   Operation 10 'memshiftread' 'empty' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 11 [1/1] (1.61ns)   --->   "%shift_buffer_V_0_1 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 0, i1 0"   --->   Operation 11 'memshiftread' 'shift_buffer_V_0_1' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 12 [1/1] (1.61ns)   --->   "%empty_49 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %shift_buffer_V_1_1, i1 1"   --->   Operation 12 'memshiftread' 'empty_49' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 13 [1/1] (1.61ns)   --->   "%shift_buffer_V_1_2 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 0, i1 0"   --->   Operation 13 'memshiftread' 'shift_buffer_V_1_2' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 14 [1/1] (1.61ns)   --->   "%empty_50 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %p_read_2, i1 1"   --->   Operation 14 'memshiftread' 'empty_50' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 15 [1/1] (1.61ns)   --->   "%shift_buffer_V_0_2 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 0, i1 0"   --->   Operation 15 'memshiftread' 'shift_buffer_V_0_2' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 16 [1/1] (1.61ns)   --->   "%empty_51 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %shift_buffer_V_1_2, i1 1"   --->   Operation 16 'memshiftread' 'empty_51' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 17 [1/1] (1.61ns)   --->   "%shift_buffer_V_1_3 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 0, i1 0"   --->   Operation 17 'memshiftread' 'shift_buffer_V_1_3' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 18 [1/1] (1.61ns)   --->   "%empty_52 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %p_read_1, i1 1"   --->   Operation 18 'memshiftread' 'empty_52' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 19 [1/1] (1.61ns)   --->   "%p_0_i = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 0, i1 0"   --->   Operation 19 'memshiftread' 'p_0_i' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 20 [1/1] (1.61ns)   --->   "%empty_53 = memshiftread i16 @_ssdm_op_MemShiftRead.[31 x i16]P0A, i16 30, i16 %shift_buffer_V_1_3, i1 1"   --->   Operation 20 'memshiftread' 'empty_53' <Predicate = true> <Delay = 1.61> <CoreInst = "ShiftReg">   --->   Core 77 'ShiftReg' <Latency = 0> <II = 1> <Delay = 1.61> <Storage> <Opcode : 'memshiftread' 'load'> <Ports = 1> <Width = 16> <Depth = 31> <ShiftMem>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%kernel_data_V_7_4_load = load i16 %kernel_data_V_7_4" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 21 'load' 'kernel_data_V_7_4_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_4_load, i16 %kernel_data_V_7_0" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 22 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%kernel_data_V_7_5_load = load i16 %kernel_data_V_7_5" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 23 'load' 'kernel_data_V_7_5_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_5_load, i16 %kernel_data_V_7_1" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 24 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%kernel_data_V_7_6_load = load i16 %kernel_data_V_7_6" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 25 'load' 'kernel_data_V_7_6_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_6_load, i16 %kernel_data_V_7_2" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 26 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%kernel_data_V_7_7_load = load i16 %kernel_data_V_7_7" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 27 'load' 'kernel_data_V_7_7_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_7_load, i16 %kernel_data_V_7_3" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 28 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%kernel_data_V_7_17_load = load i16 %kernel_data_V_7_17" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 29 'load' 'kernel_data_V_7_17_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_17_load, i16 %kernel_data_V_7_13" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 30 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%kernel_data_V_7_18_load = load i16 %kernel_data_V_7_18" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 31 'load' 'kernel_data_V_7_18_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_18_load, i16 %kernel_data_V_7_14" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 32 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%kernel_data_V_7_19_load = load i16 %kernel_data_V_7_19" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 33 'load' 'kernel_data_V_7_19_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_19_load, i16 %kernel_data_V_7_15" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 34 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%kernel_data_V_7_28_load = load i16 %kernel_data_V_7_28" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 35 'load' 'kernel_data_V_7_28_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_28_load, i16 %kernel_data_V_7_24" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 36 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%kernel_data_V_7_29_load = load i16 %kernel_data_V_7_29" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 37 'load' 'kernel_data_V_7_29_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_29_load, i16 %kernel_data_V_7_25" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 38 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%kernel_data_V_7_30_load = load i16 %kernel_data_V_7_30" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 39 'load' 'kernel_data_V_7_30_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_30_load, i16 %kernel_data_V_7_26" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 40 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%kernel_data_V_7_31_load = load i16 %kernel_data_V_7_31" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 41 'load' 'kernel_data_V_7_31_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_31_load, i16 %kernel_data_V_7_27" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 42 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%kernel_data_V_7_8_load = load i16 %kernel_data_V_7_8" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 43 'load' 'kernel_data_V_7_8_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_8_load, i16 %kernel_data_V_7_4" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 44 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%kernel_data_V_7_9_load = load i16 %kernel_data_V_7_9" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 45 'load' 'kernel_data_V_7_9_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_9_load, i16 %kernel_data_V_7_5" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 46 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%kernel_data_V_7_10_load = load i16 %kernel_data_V_7_10" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 47 'load' 'kernel_data_V_7_10_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_10_load, i16 %kernel_data_V_7_6" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 48 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%kernel_data_V_7_11_load = load i16 %kernel_data_V_7_11" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 49 'load' 'kernel_data_V_7_11_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_11_load, i16 %kernel_data_V_7_7" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 50 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%kernel_data_V_7_20_load = load i16 %kernel_data_V_7_20" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 51 'load' 'kernel_data_V_7_20_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_20_load, i16 %kernel_data_V_7_16" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 52 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%kernel_data_V_7_21_load = load i16 %kernel_data_V_7_21" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 53 'load' 'kernel_data_V_7_21_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_21_load, i16 %kernel_data_V_7_17" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 54 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%kernel_data_V_7_22_load = load i16 %kernel_data_V_7_22" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 55 'load' 'kernel_data_V_7_22_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_22_load, i16 %kernel_data_V_7_18" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 56 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%kernel_data_V_7_23_load = load i16 %kernel_data_V_7_23" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 57 'load' 'kernel_data_V_7_23_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_23_load, i16 %kernel_data_V_7_19" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 58 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%kernel_data_V_7_32_load = load i16 %kernel_data_V_7_32" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 59 'load' 'kernel_data_V_7_32_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_32_load, i16 %kernel_data_V_7_28" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 60 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%kernel_data_V_7_33_load = load i16 %kernel_data_V_7_33" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 61 'load' 'kernel_data_V_7_33_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_33_load, i16 %kernel_data_V_7_29" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 62 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%kernel_data_V_7_34_load = load i16 %kernel_data_V_7_34" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 63 'load' 'kernel_data_V_7_34_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_34_load, i16 %kernel_data_V_7_30" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 64 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%kernel_data_V_7_35_load = load i16 %kernel_data_V_7_35" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 65 'load' 'kernel_data_V_7_35_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%store_ln201 = store i16 %kernel_data_V_7_35_load, i16 %kernel_data_V_7_31" [firmware/nnet_utils/nnet_conv_stream.h:201]   --->   Operation 66 'store' 'store_ln201' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_0_0, i16 %kernel_data_V_7_8" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 67 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_0_1, i16 %kernel_data_V_7_9" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 68 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_0_2, i16 %kernel_data_V_7_10" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 69 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %p_0_i, i16 %kernel_data_V_7_11" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 70 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_1_0, i16 %kernel_data_V_7_20" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 71 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_1_1, i16 %kernel_data_V_7_21" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 72 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_1_2, i16 %kernel_data_V_7_22" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 73 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %shift_buffer_V_1_3, i16 %kernel_data_V_7_23" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 74 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %p_read_4, i16 %kernel_data_V_7_32" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 75 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %p_read_3, i16 %kernel_data_V_7_33" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 76 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %p_read_2, i16 %kernel_data_V_7_34" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 77 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%store_ln214 = store i16 %p_read_1, i16 %kernel_data_V_7_35" [firmware/nnet_utils/nnet_conv_stream.h:214]   --->   Operation 78 'store' 'store_ln214' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 79 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 3.23ns
+The critical path consists of the following:
+	wire read on port 'p_read' (firmware/nnet_utils/nnet_conv_stream.h:237) [45]  (0 ns)
+	'memshiftread' operation ('shift_buffer.V[1][0]') [46]  (1.62 ns)
+	'memshiftread' operation ('shift_buffer.V[0][0]') [47]  (1.62 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
