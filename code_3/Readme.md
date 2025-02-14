@@ -78,7 +78,7 @@ sudo apt-get install verilator
 ```
 
 ### 2. `Cannot find the files. List of candidates: libvta_fsim.so`
-如果 `libvta_fsim.so` 無法找到，找到 $TVM_HOME/build 目錄下檢查是否有 libvta_fsim.so：
+如果 `libvta_fsim.so` 無法找到，找到 `$TVM_HOME/build` 目錄下檢查是否有 `libvta_fsim.so`：
 ```sh
 grep "USE_VTA_FSIM" $TVM_HOME/build/config.cmake
 ```
