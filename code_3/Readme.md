@@ -23,7 +23,7 @@ sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev 
 
 ## 4. 設定環境變數
 
-將以下環境變數加入 `~/.bashrc`，設為用久，並確保它們生效：
+因為要將變數設為用久，後面都加入 `~/.bashrc`，並確保它們生效：
 ```sh
 echo 'export TVM_HOME=~/TVM/tvm_v18' >> ~/.bashrc
 echo 'export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}' >> ~/.bashrc
