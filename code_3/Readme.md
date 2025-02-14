@@ -72,17 +72,17 @@ python3 $TVM_HOME/vta/tests/python/integration/test_benchmark_topi_conv2d.py
 ```sh
 verilator --version
 ```
-如果未安裝，請手動安裝並重試：
+如果沒出現版本資訊，代表未安裝，請手動安裝並重試：
 ```sh
 sudo apt-get install verilator
 ```
 
 ### 2. `Cannot find the files. List of candidates: libvta_fsim.so`
-如果 `libvta_fsim.so` 無法找到，請檢查 `USE_VTA_FSIM` 是否正確啟用，找到 $TVM_HOME/build 下面是否有 libvta_fsim.so：
+如果 `libvta_fsim.so` 無法找到，找到 $TVM_HOME/build 目錄下檢查是否有 libvta_fsim.so：
 ```sh
 grep "USE_VTA_FSIM" $TVM_HOME/build/config.cmake
 ```
-如果未啟用，請重新執行：
+如果沒有找到，請重新編譯：
 ```sh
 echo 'set(USE_VTA_FSIM ON)' >> $TVM_HOME/build/config.cmake # 或是直接打開 config.cmake 修改
 cd $TVM_HOME/build && cmake .. && make -j4
