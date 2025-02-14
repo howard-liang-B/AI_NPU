@@ -17,12 +17,13 @@ sudo apt-get update
 ## 3. 安裝必要的開發工具與依賴
 ```sh
 sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev \
-                        zlib1g-dev build-essential cmake libedit-dev libxml2-dev
+                        zlib1g-dev build-essential cmake libedit-dev libxml2-dev \
+                        llvm-dev llvm verilator
 ```
 
 ## 4. 設定環境變數
 
-將以下環境變數加入 `~/.bashrc`，並確保它們生效：
+將以下環境變數加入 `~/.bashrc`，設為用久，並確保它們生效：
 ```sh
 echo 'export TVM_HOME=~/TVM/tvm_v18' >> ~/.bashrc
 echo 'export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}' >> ~/.bashrc
@@ -41,8 +42,7 @@ pip3 install --user numpy decorator attrs typing-extensions psutil scipy tornado
 
 ## 6. 安裝額外的系統依賴
 ```sh
-conda install -c conda-forge libstdcxx-ng
-sudo apt-get install llvm-dev llvm verilator
+conda install -c conda-forge libstdcxx-ng 
 ```
 
 ## 7. 編譯 TVM
@@ -78,13 +78,13 @@ sudo apt-get install verilator
 ```
 
 ### 2. `Cannot find the files. List of candidates: libvta_fsim.so`
-如果 `libvta_fsim.so` 無法找到，請檢查 `USE_VTA_FSIM` 是否正確啟用：
+如果 `libvta_fsim.so` 無法找到，請檢查 `USE_VTA_FSIM` 是否正確啟用，找到 $TVM_HOME/build 下面是否有 libvta_fsim.so：
 ```sh
 grep "USE_VTA_FSIM" $TVM_HOME/build/config.cmake
 ```
 如果未啟用，請重新執行：
 ```sh
-echo 'set(USE_VTA_FSIM ON)' >> $TVM_HOME/build/config.cmake
+echo 'set(USE_VTA_FSIM ON)' >> $TVM_HOME/build/config.cmake # 或是直接打開 config.cmake 修改
 cd $TVM_HOME/build && cmake .. && make -j4
 ```
 
