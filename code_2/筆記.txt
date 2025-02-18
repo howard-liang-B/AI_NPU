@@ -1,2 +1,2 @@
-1. 查看 convert_from_onnx_model : convert_c:\Users\user\anaconda3\envs\YOLOv8_env\lib\site-packages\hls4ml\converters\__init__.py
+1. 查看 convert_from_onnx_model : c:\Users\user\anaconda3\envs\YOLOv8_env\lib\site-packages\hls4ml\converters\__init__.py
 2. 查看 supported_layers : c:\Users\user\anaconda3\envs\YOLOv8_env\lib\site-packages\hls4ml\converters\onnx_to_hls.py
